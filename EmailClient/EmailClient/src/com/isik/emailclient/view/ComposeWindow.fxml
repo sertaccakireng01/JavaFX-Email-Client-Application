@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="450.0" prefWidth="600.0" spacing="10.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isik.emailclient.controller.ComposeController">
+   <padding>
+      <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+   </padding>
+   <children>
+      <Label text="Compose New Email">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      
+      <HBox alignment="CENTER_LEFT" spacing="10.0" style="-fx-background-color: #f0f0f0; -fx-background-radius: 5; -fx-padding: 5;">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleSendAction" prefWidth="80.0" style="-fx-font-weight: bold;" text="Send" />
+            <Button mnemonicParsing="false" onAction="#handleAttachAction" text="Attach File" />
+            <Label fx:id="lblAttachment" textFill="#2c3e50" />
+         </children>
+      </HBox>
+      
+      <AnchorPane VBox.vgrow="ALWAYS">
+         <children>
+            <Label layoutY="5.0" text="To:" AnchorPane.leftAnchor="0.0" />
+            <TextField fx:id="txtTo" layoutX="60.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            
+            <Label layoutY="40.0" text="Subject:" AnchorPane.leftAnchor="0.0" />
+            <TextField fx:id="txtSubject" layoutX="60.0" layoutY="35.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
+            
+            <Label layoutY="75.0" text="Message:" AnchorPane.leftAnchor="0.0" />
+            <TextArea fx:id="txtMessage" layoutY="95.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

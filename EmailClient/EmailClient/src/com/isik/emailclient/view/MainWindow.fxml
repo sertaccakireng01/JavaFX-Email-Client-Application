@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isik.emailclient.controller.MainController">
+   
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button onAction="#handleRefreshAction" text="Refresh" />
+          <Button onAction="#handleComposeAction" text="Compose New" />
+          <Button onAction="#handleReplyAction" text="Reply" />
+          <Button onAction="#handleNewHostAction" text="New Host" />
+            
+          <Pane HBox.hgrow="ALWAYS" /> 
+          
+          <Button onAction="#handleDeleteHostAction" text="Delete Host" style="-fx-base: #ffcccc; -fx-text-fill: red;" />
+          
+          <ComboBox fx:id="cmbHosts" prefWidth="150.0" promptText="Select your host" />
+        </items>
+      </ToolBar>
+   </top>
+   
+   <center>
+      <SplitPane dividerPositions="0.2" BorderPane.alignment="CENTER">
+        <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label style="-fx-font-weight: bold;" text="Folders" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  <TreeView fx:id="folderTree" layoutY="35.0" prefHeight="523.0" prefWidth="175.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0" />
+               </children>
+            </AnchorPane>
+            
+            <SplitPane dividerPositions="0.6" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0">
+              <items>
+                  <TableView fx:id="emailTable" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="colSender" prefWidth="150.0" text="Sender" />
+                      <TableColumn fx:id="colSubject" prefWidth="300.0" text="Subject" />
+                      <TableColumn fx:id="colDate" prefWidth="120.0" text="Date" />
+                      <TableColumn fx:id="colAttachment" prefWidth="50.0" text="Attach" />
+                    </columns>
+                  </TableView>
+                  
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Label style="-fx-font-weight: bold; text-fill: gray;" text="Selected message details will appear here" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="5.0" />
+                        <TextArea fx:id="messageContentArea" editable="false" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="25.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+        </items>
+      </SplitPane>
+   </center>
+   
+   <bottom>
+      <Label fx:id="lblStatus" style="-fx-padding: 5;" text="Current host: (Not connected)" BorderPane.alignment="CENTER_LEFT" />
+   </bottom>
+   
+</BorderPane>
