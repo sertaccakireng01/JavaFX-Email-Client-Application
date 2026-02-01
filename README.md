@@ -2,6 +2,7 @@ As a project of my Advanced Java Programming course, I developed a fully functio
 This application is a complete, working system designed to handle real-world email operations through a professional and responsive user interface.
 
 Key Features:
+
 -Real-Time Operations: Capable of composing, sending, and replying to real emails.
 
 -Attachment Management: Full support for handling and sending file attachments.
@@ -13,6 +14,7 @@ Key Features:
 -Functional Mockup Integration: Successfully translated complex functional requirements into a production-ready GUI.
 
 Technical Highlights:
+
 -Architecture: Strictly followed the MVC (Model-View-Controller) pattern for a clean separation of concerns.
 
 -Core Technologies: JavaFX, Java Mail API, and SceneBuilder.
