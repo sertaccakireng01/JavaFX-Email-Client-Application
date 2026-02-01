@@ -1,3 +1,5 @@
+JavaFX Email Client Application
+
 As a project of my Advanced Java Programming course, I developed a fully functional desktop email client that earned a 90% score. 
 This application is a complete, working system designed to handle real-world email operations through a professional and responsive user interface.
 
